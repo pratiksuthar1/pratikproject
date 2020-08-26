@@ -1,0 +1,97 @@
+{% extends 'myapp/seller_header.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		td{
+			padding: 5px;
+			background-color: #DB7093;
+			
+		}
+		h3{
+			color: red;
+		}
+		body{
+			background-image: url('{% static "myapp/abc.jpg" %}');
+			background-repeat: no-repeat;
+			background-size: 100%;
+
+
+		}
+	</style>
+</head>
+<body>
+	<center>
+		{% if msg %}
+		{{msg}}
+		{% endif %}
+			</center>
+	<center><h3><b><u>Add Movie</u></b></center>
+	<center>
+	<form name="frm" method="POST" action="" enctype="multipart/form-data">
+		{% csrf_token %}
+	<table>
+
+		<tr>
+			<td>Select Category</td>	
+			<td>
+				<select name="movie_category">
+					<option>-------Select Category-------</option>
+					<option value="romentic" name="romentic">Romentic</option>
+					<option value="thriller" name="thriller">Thriller</option>
+					<option value="horror" name="horror">Horoor</option>
+					<option value="scientific" name="scientific">Scientific</option>
+					
+				</select>
+			</td>
+		</tr>
+			<td><b>Movie Name</b></td>
+			<td><input type="text" name="movie_name"></td>
+		</tr>
+
+		<tr>
+			<td><b>Language</b></td>
+			<td><input type="text" name="language"></td>
+		</tr>
+		<tr>
+			<td><b>Year of Release</b></td>
+			<td><input type="text" name="year"></td>
+		</tr>
+
+		<tr>
+			<td><b>Director Name</b></td>
+			<td><input type="text"  name="director"></td>
+		</tr>
+
+		<tr>
+			<td><b>Hero Name</b></td>
+			<td><input type="text" name="hero"></td>
+		</tr>
+
+		<tr>
+			<td><b>Heroine Name</b></td>
+			<td><input type="text" name="heroine"></td>
+		</tr>
+<tr>
+	<td>Movie image</td>
+	<td><input type="file" name="movie_image"></td>
+</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" name="submit" value="submit">
+			</td>
+		</tr>
+
+
+	</table>	
+
+
+
+	</form>
+	</center>
+{% endblock %}
+</body>
+</html>

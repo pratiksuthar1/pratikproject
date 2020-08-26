@@ -1,0 +1,57 @@
+{% extends 'myapp/header.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		td{
+			padding: 5px;
+			background-color: skyblue;
+			
+		}
+		h3{
+			text-shadow: 2px 2px red;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		{% if msg %}
+		{{msg}}
+		{% endif %}
+			</center>
+	<center><h3><b><u>Login Page</u></b></center>
+	<center>
+	<form name="login" method="POST" action="{% url 'login' %}">
+{% csrf_token %}
+	<table>
+		<tr>
+			<td><b>Enter Email</b></td>
+			<td><input type="text" name="email"></td>
+		</tr>
+
+		<tr>
+			<td><b>Enter Password</b></td>
+			<td><input type="password" name="password"></td>
+		</tr>
+
+		
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" name="submit" value="submit">
+			</td>
+		</tr>
+
+	</table>
+
+		<a href="{% url 'enter_email' %}">Forgot Password</a>
+
+
+
+	</form>
+	</center>
+{% endblock %}
+</body>
+</html>

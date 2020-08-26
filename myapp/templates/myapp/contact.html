@@ -1,0 +1,65 @@
+{% extends 'myapp/header.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		td{
+			padding: 5px;
+			background-color: skyblue;
+			
+		}
+		h3{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		{% if msg %}
+		{{msg}}
+		{% endif %}
+			</center>
+	<center><h3><b><u>Contact us</u></b></center>
+	<center>
+	<form name="frm" method="POST" action="{% url 'contact' %}">
+		{% csrf_token %}
+	<table>
+		<tr>
+			<td><b>Name</b></td>
+			<td><input type="text" name="name"></td>
+		</tr>
+
+		<tr>
+			<td><b>Mobile</b></td>
+			<td><input type="text" name="mobile"></td>
+		</tr>
+
+		<tr>
+			<td><b>Email</b></td>
+			<td><input type="text" name="email"></td>
+		</tr>
+
+		<tr>
+			<td><b>Remarks</b></td>
+			<td><textarea cols="20" rows="05" name="remarks"></textarea></td>
+		</tr>
+
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" name="submit" value="submit">
+			</td>
+
+		</tr>
+
+	</table>	
+
+
+
+	</form>
+	</center>
+{% endblock %}
+</body>
+</html>

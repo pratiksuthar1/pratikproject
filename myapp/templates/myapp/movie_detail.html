@@ -1,0 +1,50 @@
+{% extends 'myapp/seller_header.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css" >
+		td{
+			padding: 5px;
+		}
+		body{
+			background-color: rgba(201, 76, 76, 0.3);
+
+
+		}
+	</style>
+	
+</head>
+<body>
+
+	<center>
+<h3>
+	 </h3>
+	
+</center>
+	<div id="box" class="col-sm-3">
+			<div class="container">
+		  		<div class="card" style="width:250px">
+		    		<img class="card-img-top" src="{{movies.movie_image.url}}" alt="Card image" width=200px height=250px>
+		    			<div class="card-body">
+		      				<h4 class="card-title">Movie Name:{{movies.movie_name}}</h4>
+		      				<p class="card-text">Movie Hero:{{movies.hero}}</p>
+		      				<a href="">Inactive</a>
+		    			</div>
+		  		</div>	  
+			</div>
+		</div>
+		
+
+	</div>
+	
+		
+
+	</div>
+
+	
+{% endblock %}
+
+</body>
+</html>

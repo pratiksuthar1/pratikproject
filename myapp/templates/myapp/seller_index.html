@@ -1,0 +1,38 @@
+{% extends 'myapp/seller_header.html' %}
+	{% block content %}
+	{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			background-image: url('{% static "myapp/BookMyShow.jpg" %}');
+			background-repeat: no-repeat;
+			background-size: 100%;
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+<div id="box" class="col-sm-3">
+			<div class="container">
+		  		<div class="card" style="width:250px">
+		    		<img class="card-img-top" src="{{request.session.profile_picture}}" alt="Card image" width=200px height=250px>
+		    			<div class="card-body">
+		      				<h4 class="card-title"></h4>
+		      				<p class="card-text"></p>
+		      				<a href="">More Detail</a>
+		    			</div>
+		  		</div>	  
+			</div>
+		</div>
+		
+
+	
+    
+	<h1> Welcome to seller index</h1>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% extends 'myapp/seller_header.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css" >
+		td{
+			padding: 5px;
+		}
+		body{
+			background-color: rgba(201, 76, 76, 0.3);
+
+
+		}
+	</style>
+	
+</head>
+<body>
+
+	<center>
+<h3>
+	 </h3>
+	
+</center>
+{% for m in movies %}
+	<div id="box" class="col-sm-3">
+			<div class="container">
+		  		<div class="card" style="width:250px">
+		    		<img class="card-img-top" src="{{m.movie_image.url}}" alt="Card image" width=200px height=250px>
+		    			<div class="card-body">
+		      				<h4 class="card-title">Movie Name:{{m.movie_name}}</h4>
+		      				<p class="card-text">Movie Hero:{{m.hero}}</p>
+		      				<a href="{% url 'movie_detail' pk=m.pk %}">More Detail</a>
+		    			</div>
+		  		</div>	  
+			</div>
+		</div>
+		
+
+	</div>
+	{% endfor %}
+		
+
+	</div>
+
+	
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'myapp/header.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		td{
+			padding: 5px;
+			background-color: skyblue;
+			
+		}
+		h3{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		{% if msg %}
+		{{msg}}
+		{% endif %}
+			</center>
+	<center><h3><b><u>Enter Email</u></b></center>
+	<center>
+	<form name="enter_email" method="POST" action="{% url 'get_otp'	 %}">
+		{% csrf_token %}
+	<table>
+		<tr>
+			<td><b>Enter Email</b></td>
+			<td><input type="text" name="email"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" name="submit" value="Get OTP">
+			</td>
+		</tr>
+
+	</table>	
+
+
+
+	</form>
+	</center>
+{% endblock %}
+</body>
+</html>
